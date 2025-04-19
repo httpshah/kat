@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+    .section {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: start;
+      position: relative;
+    }
+    .container {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+    .top-nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+      font-size: 18px;
+    }
+    .top-nav a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+    .carousel img {
+      max-width: 300px;
+      height: auto;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .nav-btn {
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      padding: 10px;
+    }
+    .nav-btn:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .split {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .split-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-left: 50px;
+      position: relative;
+      padding-right: 50px;
+    }
+    .split-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding-right: 50px;
+    }
+    .split-right img {
+      max-width: 350px;
+      height: auto;
+      object-fit: contain;
+      margin-left: 20px;
+      margin-right: 20px;
+      transition: all 0.3s ease-in-out; /* Smooth transition for centering effect */
+    }
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Space between images */
+    }
+    .nav-btns {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px; /* Add margin to separate buttons from the image */
+    }
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="mainContainer">
+  
+   <!-- Section 1 -->
+  <div class="section" style="background: #0496c2;">
+    <div class="top-nav">
+      <a onclick="goToSection(1)">HBD</a>
+      <a onclick="goToSection(2)">Birthday Girl</a>
+      <a href="https://www.tiktok.com/@bellelyrcs/video/7169797108189515035?is_from_webapp=1&sender_device=pc" target="_blank">&#128522;</a>
+    </div>
+    <img src="https://pbs.twimg.com/media/Go304K7bcAAftMC?format=jpg&name=large" 
+         alt="Doraemon Face"
+         style="width: 100%; height: auto; max-height: 80vh; object-fit: cover;">
+  </div>
+
+  <!-- Section 2 -->
+  <div 
+    class="section" 
+    style="background: url('your-background-image.jpg') no-repeat center/cover;">
+    <img 
+      src="file:///C:/Users/63938/Downloads/hbd.png" 
+      alt="Birthday Image" 
+      class="bg-image"
+    >
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" style="background: url('https://pbs.twimg.com/media/Go4TZT7aEAAQsMF?format=jpg&name=large') no-repeat center/cover;">
+    <div class="split">
+      <div class="split-left carousel-container">
+        <div class="carousel">
+          <img 
+            src="https://scontent.fcrk1-4.fna.fbcdn.net/v/t39.30808-6/391757251_6910922012308832_6749821312362249392_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFuUULJ6ahCIhkdIG4AwebhgCE_Y1p_AzKAIT9jWn8DMnBkVueHmnilt03Bowjh5HiXb98MthBa8hgxtDLzVGql&_nc_ohc=WokCS4_O-rIQ7kNvwHmNzq7&_nc_oc=Adk-EDP4_kdqwioTMEZgGXedd2ytax3R5UBeQ4CDmrlKUNykEQjhbWyszMk3H2EBtsU&_nc_zt=23&_nc_ht=scontent.fcrk1-4.fna&_nc_gid=4yqr5LbFrw8lLjNVL3PpMQ&oh=00_AfHKXRMxqGkXGDC7SqjIpx5K0d3P3yGLPLcOTsGZZ8n7TQ&oe=680910B0"
+            alt="Pic 1"
+            class="carousel-img"
+            style="height: 30vh; width: auto; border: 3px solid #ffc0cb; border-radius: 8px; object-fit: contain;">
+          <img
+            src="https://scontent.fcrk1-2.fna.fbcdn.net/v/t39.30808-6/472966885_1328915638462741_6772213806570281947_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE9C-u9mBv8GmjFetMI6yuUTh_fYji2vztOH99iOLa_O7HqgoVZMK_BWH2aJz0ASakZnn1JSsSqh9oN0vE7MU5-&_nc_ohc=cR6MDB1FTfQQ7kNvwHJRoUq&_nc_oc=Adl6D_bS5CsEeNnNSu-_XIwhDsEV_VuclwZjArLvEgsrbpKsDeAioPbWJriHY8CNhy0&_nc_zt=23&_nc_ht=scontent.fcrk1-2.fna&_nc_gid=gWzvkx0zjRMkzPETgDy4bw&oh=00_AfGQ60xYQ8RZqCJeyIGZPli9MKo9tp5UoY9Yx76lqns6qQ&oe=6808F404"
+            alt="Pic 2"
+            class="carousel-img"
+            style="height: 30vh; width: auto; border: 3px solid #ffc0cb; border-radius: 8px; object-fit: contain;">
+          <img
+            src="https://scontent.fcrk1-3.fna.fbcdn.net/v/t39.30808-6/480280501_9415788248488850_6235247229287521277_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEhoKSoI_YOeFe8xXjsuW2-phAFlqnsFbemEAWWqewVtz0V5X56NO1DYdGXt4D0zg0O8cSHZjPb1yzTJsUfLIO1&_nc_ohc=aB7Cias_bZYQ7kNvwF7P7f7&_nc_oc=AdmyttvxNXvNwCfQjRcn_txMBtYMVdbXii60CuHDSioDsDlCItv4-Rui9gkfUJs-YyE&_nc_zt=23&_nc_ht=scontent.fcrk1-3.fna&_nc_gid=VsPmsB38IINYm4NH5v8q7g&oh=00_AfGzT0r8w37pjn9pRK3FNJ-xStb7p75ZKEnr1IEJz5Zw_A&oe=68091541"
+            alt="Pic 3"
+            class="carousel-img"
+            style="height: 30vh; width: auto; border: 3px solid #ffc0cb; border-radius: 8px; object-fit: contain;">
+          <img
+            src="https://scontent.fcrk1-4.fna.fbcdn.net/v/t1.6435-9/54728437_2248015765266170_3683652364398493696_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFd9Jlfj_xqMMmlcUjzftBzSg4pqhzwUsRKDimqHPBSxFzKNP0spsWv09cC2K_V983dkAC-V4-WPAPAoWOhLj12&_nc_ohc=jY1VHP-3DRcQ7kNvwGW5HmM&_nc_oc=AdmM5KbEnLMZD1_9Hu6emQru8p1SGOZ4aJlsB9dOfV7bUAnC5CyJkMt4WjyTPzV3wYc&_nc_zt=23&_nc_ht=scontent.fcrk1-4.fna&_nc_gid=ZPTmOd1hP1xUzvCZg5TzLA&oh=00_AfFVBtj7PjMawd_nh3n67z4QhdmpzMjlYDV13d2GW3ehNQ&oe=682A9ECE"
+            alt="Pic 4"
+            class="carousel-img"
+            style="height: 30vh; width: auto; border: 3px solid #ffc0cb; border-radius: 8px; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+    <!-- Buttons under the image -->
+    <div class="nav-btns">
+      <button class="nav-btn" onclick="prevImage()">&#8592;</button>
+      <button class="nav-btn" onclick="nextImage()">&#8594;</button>
+    </div>
+  </div>
+  
+</div>
+
+<script>
+  const container = document.getElementById("mainContainer");
+  function goToSection(index) {
+    const sections = document.querySelectorAll(".section");
+    container.scrollTo({
+      top: sections[index].offsetTop,
+      behavior: "smooth"
+    });
+  }
+
+  let currentImage = 0;
+  const images = document.querySelectorAll(".carousel-img");
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextImage() {
+    currentImage = (currentImage + 1) % images.length;
+    showImage(currentImage);
+  }
+
+  function prevImage() {
+    currentImage = (currentImage - 1 + images.length) % images.length;
+    showImage(currentImage);
+  }
+
+  // Initial image display
+  showImage(currentImage);
+</script>
+
+</body>
+</html>
